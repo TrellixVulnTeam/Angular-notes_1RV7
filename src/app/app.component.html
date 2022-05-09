@@ -1,0 +1,34 @@
+<div class="container">
+  <!--<div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>Create two new components (manually or with CLI): WarningAlert and SuccessAlert</li>
+        <li>Output them beneath each other in the AppComponent</li>
+        <li>Output a warning or success message in the Components</li>
+        <li>Style the Components appropiately (maybe some red/green text?)</li>
+      </ol>
+      <p>Use external or internal templates and styles</p>
+      <p>Feel free to create morec components, nest them into each other or play around with different types of selectors</p>
+      <hr>
+      <app-warning-alert></app-warning-alert>
+      <app-success-alert></app-success-alert>
+    </div>
+  </div>-->
+  <!--Two way data binding-->
+<h3>This is an Angular Module</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Username</label>
+      <input type="text" class="form-control" [(ngModel)]="username">
+      <p>{{username}}</p>
+      <button class="btn btn-primary" [disabled]="username === ''" (click)="username =''">Reset user</button>
+    </div>
+  </div>
+  <app-servers></app-servers>
+  <hr>
+  <button class="btn btn-primary" (click)="onToggleDetails()">Show Details</button>
+  <p *ngIf="showSecret">Secret Password = tuna</p>
+  <div *ngFor="let logItem of log; let i = index" [ngStyle]="{backgroundColor: logItem >= 4 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': i >= 5}">{{ logItem }}</div>
+</div>
+</div>
